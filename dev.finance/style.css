@@ -1,0 +1,343 @@
+/*<============================================================================ Imports 
+*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
+
+
+/*<============================================================================ Pallet colors
+*/
+:root{
+    --Wcolor: #dfe4e6;  /* White color */
+    --Bcolor: #2d3436;  /* Black color */
+    --LBcolor: #727879; /* Light Black Color*/
+    --Gcolor: #49aa26;  /* Green color */
+    --Rcolor: #c0392b;  /* Red color */ 
+}
+
+
+/*<============================================================================ Global 
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+html{
+    font-size: 93.75%;
+}
+
+body{
+    background: var(--Wcolor);
+}
+
+input, button{
+    outline: none;
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.symbols{
+    font-weight: bold;
+}
+
+
+/*<============================================================================ Titles 
+*/
+h2{
+    margin: 3.2rem 0 .8rem;
+    color: var(--Bcolor);
+    font-weight: normal;
+}
+
+
+/*<============================================================================ Links & buttons 
+*/
+a{
+    color: var(--Bcolor);
+    text-decoration: none;
+}
+
+a:hover{
+    color: var(--Gcolor);
+}
+
+button{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px var(--Gcolor) solid;
+    color: var(--Gcolor);
+    padding: 0;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--Gcolor);
+    color: white;
+}
+
+.button.new{
+    display: inline-block;
+    margin-bottom: .8rem;
+}
+
+.button.cancel{
+    color: var(--Rcolor);
+    border: 2px var(--Rcolor) solid;
+    border-radius: .25rem;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button.cancel:hover{
+    background-color: var(--Rcolor);
+    color: white;
+}
+
+.button.new{
+    width: 100%;
+    color: var(--Gcolor);
+    font-size: 15px;
+    border: 2px var(--Gcolor) solid;
+    border-radius: .25rem;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button.new:hover{
+    background-color: var(--Gcolor);
+    color: white;
+}
+
+.button.minus{
+    cursor: pointer;
+}
+
+/*<============================================================================ Header 
+*/
+header{
+    background: #2d3436;
+    padding: 2rem 0 10rem;
+    text-align: center;
+}
+
+.logo{
+    color: white;
+    font-weight: 300;
+}
+
+/*<============================================================================ Main 
+*/
+.container{
+    width: min(90vw, 800px);
+    margin: auto;
+}
+
+
+/*<============================================================================ Balances 
+*/
+.balance{
+    margin-top: -8rem;
+}
+
+.balance h2{
+    margin-top: 0;
+    color: white;
+}
+
+
+/*<============================================================================ Cards 
+*/
+.card{
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: .25rem;
+    margin-bottom: 2rem;
+    color: var(--Bcolor);
+}
+
+.card h3{
+    font-weight: normal;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card p{
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-top: 1rem;
+}
+
+.card.total{
+    background: var(--Gcolor);
+    color: white;
+}
+
+
+/*<============================================================================ Table 
+*/
+.transaction{
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.data__table{
+    width: 100%;
+    border-spacing: 0 .5rem;
+    color: var(--LBcolor);
+}
+
+table th{
+    background: white;
+    font-weight: normal;
+    text-align: left;
+    padding: 1rem 2rem;
+}
+
+table tbody tr{
+    opacity: .7;
+}
+
+table tbody tr:hover{
+ opacity: initial;
+}
+
+table td{
+    background: white;
+    padding: 1rem 2rem;
+}
+
+td.description{
+    color: var(--Bcolor);
+}
+
+td.income{
+    color: var(--Gcolor);
+}
+
+td.expense{
+    color: var(--Rcolor);
+}
+table thead tr th:first-child,
+table tbody tr td:first-child{
+    border-radius: .25rem 0 0 .25rem;
+}
+table thead tr th:last-child,
+table tbody tr td:last-child{
+    border-radius: 0 .25rem .25rem 0;
+}
+
+
+/*<============================================================================ Modal 
+*/
+.modal__overlay{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal__overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal{
+    border-radius: 2rem;
+    background: var(--Wcolor);
+    padding: 2.4rem;
+    position: relative;
+    z-index: 1;
+    
+}
+
+
+/*<============================================================================ Form 
+*/
+.form{
+    max-width: 500px;
+}
+
+.form h2{
+    margin-top: 0;
+}
+
+input{
+    border: none;
+    border-radius: .2rem;
+    padding: 1.4rem;
+    width: 100%;
+}
+
+.input__group{
+    margin-top: .8rem;
+}
+
+.input__group small{
+    opacity: .4;
+}
+
+.input__group.action{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input__group.action .button,
+.input__group.action button{
+    width: 48%;
+}
+
+
+/*<============================================================================ Footer 
+*/
+footer{
+    text-align: center;
+    color: var(--Bcolor);
+    padding: 4rem 0 2rem;
+    opacity: .6;
+}
+
+
+/*<============================================================================ Responsive 
+*/
+@media (min-width: 800px) {
+    html {
+        font-size: 87.5%;
+    }
+
+    .balance {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
